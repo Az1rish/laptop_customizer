@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import slugify from 'slugify';
 import './App.css';
 import CustomizeForm from './CustomizeForm/CustomizeForm';
+import Cart from './Cart/Cart';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -102,16 +103,10 @@ class App extends Component {
         </header>
         <main>
           <CustomizeForm features={features}/>
-          <section className="main__summary">
-            <h2>Your cart</h2>
-            {summary}
-            <div className="summary__total">
-              <div className="summary__total__label">Total</div>
-              <div className="summary__total__value">
-                {USCurrencyFormat.format(total)}
-              </div>
-            </div>
-          </section>
+          <Cart 
+            summary={summary}
+            total={total}
+            USCurrencyFormat={USCurrencyFormat} />
         </main>
       </div>
     );
