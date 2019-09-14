@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
 import slugify from 'slugify';
-
 import './App.css';
+import CustomizeForm from './CustomizeForm/CustomizeForm';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -101,10 +101,7 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <form className="main__form">
-            <h2>Customize your laptop</h2>
-            {features}
-          </form>
+          <CustomizeForm features={features}/>
           <section className="main__summary">
             <h2>Your cart</h2>
             {summary}
