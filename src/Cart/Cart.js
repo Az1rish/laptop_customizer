@@ -16,7 +16,8 @@ export default class Cart extends Component {
                 <h2>Your cart</h2>
                 <Summary 
                     USCurrencyFormat={this.props.USCurrencyFormat} 
-                    selected={this.props.selected}/>
+                    selected={this.props.selected}
+                    handleUpdate={this.props.handleUpdate}/>
                 <div className="summary__total">
                     <div className="summary__total__label">Total</div>
                     <div className="summary__total__value">

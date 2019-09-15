@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './Options.css';
+// Normalizes string as a slug - a string that is safe to use
+// in both URLs and html attributes
+import slugify from 'slugify';
 
 export default class Options extends Component {
     render() {
@@ -10,12 +13,12 @@ export default class Options extends Component {
                     type="radio"
                     id={itemHash}
                     className="feature__option"
-                    name={slugify(feature)}
-                    checked={this.props.item.name === this.props.selected[feature].name}
-                    onChange={e => this.props.handleUpdate(feature, item)}
+                    name={slugify(this.props.feature)}
+                    checked={this.props.item.name === this.props.selected[this.props.feature].name}
+                    onChange={e => this.props.handleUpdate(this.props.feature, this.props.item)}
                 />
                 <label htmlFor={itemHash} className="feature__label">
-                    {item.name} ({this.props.USCurrencyFormat.format(item.cost)})
+                    {this.props.item.name} ({this.props.USCurrencyFormat.format(this.props.item.cost)})
                 </label>
             </div>
         );
