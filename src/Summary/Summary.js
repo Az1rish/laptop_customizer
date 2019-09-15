@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Summary.css';
+import Total from '../Total/Total';
 
 export default class Summary extends Component {
     render() {
@@ -15,9 +16,9 @@ export default class Summary extends Component {
                     <div className="summary__option__value">
                         {selectedOption.name}
                     </div>
-                    <div className="summary__option__cost">
-                        {this.props.USCurrencyFormat.format(selectedOption.cost)}
-                    </div>
+                    <Total 
+                        USCurrencyFormat={this.props.USCurrencyFormat}
+                        selectedOption={selectedOption}/>
                 </div>
             );
         });
