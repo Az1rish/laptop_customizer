@@ -8,7 +8,9 @@ export default class Options extends Component {
     render() {
         const itemHash = slugify(JSON.stringify(this.props.item));
         return (
-            <div key={itemHash} className="feature__item">
+            <div 
+                key={itemHash} 
+                className="feature__item">
                 <input
                     type="radio"
                     id={itemHash}

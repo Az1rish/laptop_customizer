@@ -8,17 +8,14 @@ export default class Features extends Component {
             const featureHash = feature + '-' + idx;
             const options = this.props.features[feature].map(item => {
                 return (
-                    <>
-                        <Options 
-                            item={item}
-                            feature={feature}
-                            selected={this.props.selected}
-                            USCurrencyFormat={this.props.USCurrencyFormat}
-                            handleUpdate={this.props.handleUpdate}/>
-                    </>
-                );
-                
-            });
+                    <Options 
+                        item={item}
+                        feature={feature}
+                        selected={this.props.selected}
+                        USCurrencyFormat={this.props.USCurrencyFormat}
+                        handleUpdate={this.props.handleUpdate}/>        
+                    );
+                });
             return (
               <fieldset className="feature" key={featureHash}>
                 <legend className="feature__name">
@@ -29,9 +26,9 @@ export default class Features extends Component {
             );
         });
         return (
-            <>
-                {features}
-            </>
+            <div>
+                {features}  
+            </div>  
         );
     }
 }
