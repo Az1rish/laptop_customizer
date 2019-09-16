@@ -16,9 +16,9 @@ export default class Summary extends Component {
                     <div className="summary__option__value">
                         {selectedOption.name}
                     </div>
-                    <Total 
-                        USCurrencyFormat={this.props.USCurrencyFormat}
-                        selectedOption={selectedOption}/>
+                    <div className="summary__option__cost">
+                        {this.props.USCurrencyFormat.format(selectedOption.cost)}
+                    </div>
                 </div>
             );
         });
